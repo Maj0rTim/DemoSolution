@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<div class="d-flex justify-content-center align-items-center h-100 w-100">
+    <div class="p-5 border border-primary rounded-3">
+        <h1 class="mb-4">Demo Front End</h1>
+
+        @using (Html.BeginForm("ValidateLogin", "Login", FormMethod.Post, new { @id = "LoginForm", @class = "has-validation", @style = "" }))
+        {
+            <div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input id="username" name="Username" class="form-control" type="text">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" name="Password" class="form-control" type="password">
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="RememberMe" name="RememberMe">
+                    <label class="form-check-label" for="RememberMe">
+                        Remember me
+                    </label>
+                </div>
+            </div>
+            <a id="submit" class="btn btn-primary" onclick="validateLogin()">
+                <span class="d-block" role="status">Login</span>
+                <span class="d-none spinner-border spinner-border-sm" aria-hidden="true"></span>
+            </a>
+        }
+            
+    </div>
+</div>
